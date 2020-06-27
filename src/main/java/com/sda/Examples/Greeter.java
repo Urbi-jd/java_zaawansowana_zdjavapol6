@@ -1,9 +1,13 @@
 package com.sda.Examples;
 
+import javax.print.DocFlavor;
+
 public class Greeter {
    public static void main(String[] args) {
 
        greet("Cześć", "Michał");
+
+
 
     }
 
@@ -19,4 +23,5 @@ public class Greeter {
        String message = String.format("%s, %s!", greeting, name);
         System.out.println(message);
     }
+
 }

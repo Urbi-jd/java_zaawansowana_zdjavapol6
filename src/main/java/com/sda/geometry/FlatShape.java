@@ -11,7 +11,7 @@ public abstract class FlatShape {
 
     public void printDimensions(){
         System.out.println(
-                String.format(getClass().getName() + "width: %s, height: %s", x, y)
+                String.format(getClass().getName() + " width: %s, height: %s", x, y)
         );
     }
 
