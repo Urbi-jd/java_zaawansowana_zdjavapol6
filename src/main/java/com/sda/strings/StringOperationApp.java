@@ -4,6 +4,7 @@ public class StringOperationApp {
     public static void main(String[] args) {
         StringOperation stringOperation = new TextUpperCase();
 
+
         String before = "karol";
         String afterUpperCase = stringOperation.modify(before);
         System.out.println(

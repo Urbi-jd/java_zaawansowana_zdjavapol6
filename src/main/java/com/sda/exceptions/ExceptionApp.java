@@ -65,24 +65,56 @@ public class ExceptionApp {
         System.out.println();
 
 
-
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj swoje imię");
         String name = scanner.nextLine();
         try {
-//            greet(name);
-        } catch (IllegalArgumentException exception){
+            greet(name);
+        } catch (InvalidNameException exception) {
             System.out.println("Error happened " + exception.getMessage());
-         }
+        }
+
+//Zad 4.1
+//        try {
+//        System.out.println(divide(2, 0));
+//        } catch (IllegalArgumentException e) {
+//            System.out.println("Error happened: " + e.getMessage());
+//        }
+
+
+        // Zad 5
+        try {
+            System.out.println(divide(2, 0));
+        } catch (DivisionByZeroException e) {
+            System.out.println("Error happened: " + e.getMessage());
+        }
 
 
     }
 
-//    private static void greet(String who) throws IndexOutOfBoundsException{
-//        if (who == null || who.isBlank()) {
-//            throw new InvalidNameException(who);
+    // zad 4.1
+//    static double divide(double x, double y) throws IllegalArgumentException{
+//        if(y == 0){
+//            throw new IllegalArgumentException("zły dzielnik. Nie dzieli się przez 0");
 //        }
-//        System.out.println("Hello, " + who);
+//        return x / y;
 //    }
+
+    //zad 5
+    static double divide(double x, double y){
+        if(y == 0){
+            throw new DivisionByZeroException(x,y);
+        }
+        return x / y;
+    }
+
+
+
+
+    private static void greet(String who){
+        if (who == null || who.isBlank()) {
+            throw new InvalidNameException(who);
+        }
+        System.out.println("Hello, " + who);
+    }
 }

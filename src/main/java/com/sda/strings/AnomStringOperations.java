@@ -4,6 +4,23 @@ import java.util.List;
 
 public class AnomStringOperations {
     public static void main(String[] args) {
+
+        StringOperation truncateText = new StringOperation() {
+
+            @Override
+            public String modify(String text) {
+                if(text.length() < 5){
+                    return text;
+                }
+                return text.substring(0,4);
+            }
+        };
+
+        System.out.println(truncateText.modify("Ala"));
+        System.out.println(truncateText.modify("Ala ma kota"));
+
+
+
         TextTruncate tT = new TextTruncate(6);
         TextReverse tR = new TextReverse();
 

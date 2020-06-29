@@ -16,11 +16,11 @@ public class VehicleApp {
 
         System.out.println();
 
-        Vehicle truck = new Truck();
-        truck.run(120);
-        System.out.println(truck);
-        ((Truck) truck).addPackages();
-        System.out.println(truck);
+//        Truck truck = new Truck();
+//        truck.run(120);
+//        System.out.println(truck);
+//        ((Truck) truck).addPackages();
+//        System.out.println(truck);
 
         StyledCar styledCar = new StyledCar();
 
