@@ -3,15 +3,25 @@ package com.sda.Examples;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Person_Collections {
+public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
+    private int height;
 
-    public Person_Collections(String firstName, String lastName, LocalDate dateOfBirth) {
+    public Person(String firstName, String lastName, LocalDate dateOfBirth, int height) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
+        this.height = height;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public String getFirstName() {
@@ -34,15 +44,26 @@ public class Person_Collections {
         return dateOfBirth;
     }
 
+
+
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                + hashCode() + '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person_Collections that = (Person_Collections) o;
+        Person that = (Person) o;
         return firstName.equals(that.firstName) &&
                 lastName.equals(that.lastName) &&
                 dateOfBirth.equals(that.dateOfBirth);
@@ -52,4 +73,16 @@ public class Person_Collections {
     public int hashCode() {
         return Objects.hash(firstName, lastName, dateOfBirth);
     }
+
+    public interface Comparable<T> {
+        int compareTo (T t);
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        int heightDifferences = this.getHeight() - getHeight();
+        return heightDifferences;
+    }
+
+
 }

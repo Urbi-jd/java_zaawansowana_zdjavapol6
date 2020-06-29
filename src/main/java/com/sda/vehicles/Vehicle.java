@@ -1,6 +1,8 @@
 package com.sda.vehicles;
 
 public class Vehicle {
+    double velocity;
+
     Vehicle(){
         System.out.println("Empty vehicle constructor");
     }

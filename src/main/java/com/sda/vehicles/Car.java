@@ -2,10 +2,11 @@ package com.sda.vehicles;
 
 public class Car extends Vehicle {
 
+    int passengers;
+
     Car(){
         System.out.println("Empty Car constructor");
     }
-    int passengers;
 
     void addPassenger(){
         ++passengers;
