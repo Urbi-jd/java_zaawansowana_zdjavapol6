@@ -25,6 +25,14 @@ public class StringOperationApp {
         System.out.println(
                 String.format("Before: %s; after: %s", before, afterRemoveALetters)
         );
+
+        StringOperation toUpper =  text -> text.toUpperCase();
+        System.out.println(toUpper.modify(before));
+
+        StringOperation toLower = text -> text.toLowerCase();
+        System.out.println(toLower.modify("ARtur"));
+
+
     }
 
     static void printBeforeAndAfter(String before, StringOperation operation){

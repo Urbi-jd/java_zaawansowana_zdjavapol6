@@ -52,5 +52,21 @@ public class VehicleApp {
         convCar.closeRoof();
         convCar.closeRoof();
 
+        System.out.println();
+
+        Car car5 = new Car();
+        car5.run(38);
+        Road<Car> carRoad = new Road<>();
+        carRoad.addVehicle(car5);
+        carRoad.addVehicle(car2);
+
+        Road <Motorcycle> motorcycleRoad = new Road<>();
+        motorcycleRoad.addVehicle(new Motorcycle());
+
+        carRoad.limitSpeed();
+        System.out.println(car2);
+        System.out.println(car5.toString());
+
+
     }
 }

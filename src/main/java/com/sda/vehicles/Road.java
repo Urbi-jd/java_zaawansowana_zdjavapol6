@@ -22,7 +22,9 @@ public class Road<T extends Vehicle> {
         // TO DO
         // Sprawdż czy jedzie szybciej
         for (int i = 0; i < vehicles.size(); i++) {
-            vehicles.get(i).run(40);
+            if(vehicles.get(i).velocity > 40) {
+                vehicles.get(i).run(40);
+            }
         }
     }
 }
